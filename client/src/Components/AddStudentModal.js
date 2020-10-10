@@ -16,8 +16,7 @@ function AddStudentModal(props) {
     last_name: "",
     email: "",
     role: "STUDENT",
-    crsid: "1",
-    password: ""
+    crsid: "1"
   });
 
   //importing global state
@@ -38,7 +37,7 @@ function AddStudentModal(props) {
     currState[name] = value;
     //update current State backup
     setStudentData(currState);
-    console.log("This is what we entered in form", currState)
+    // console.log("This is what we entered in form", currState)
   }
 
   //handleSubmit function to send student data
@@ -54,9 +53,7 @@ function AddStudentModal(props) {
     } 
     setValidated(true);
   
-
     if(error) {return <Alert variant="danger">{error}</Alert>}
-      
   }
 
     return (
@@ -111,39 +108,6 @@ function AddStudentModal(props) {
                       <option value="2">Test Course Two</option>
                       <option value="3">Test Course Three</option>
                     </Form.Control>
-                </Form.Group>
-                <Form.Group className="formBasicPassword">
-                    <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        id="inputPassword5"
-                        aria-describedby="passwordHelpBlock" 
-                        placeholder="Password"
-                        name="password"
-                        value={studentData.password} 
-                        onChange={handleInputChange} 
-                        required
-                    />
-                    <Form.Text className="passwordHelpBlock" muted>
-                        Password must be 8-20 characters long, contain letters and numbers, and
-                        must not contain spaces, special characters, or emoji.
-                    </Form.Text>
-                </Form.Group>
-                <Form.Group className="formBasicPassword">
-                    <Form.Label htmlFor="inputPassword5">Re-enter Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        id="inputPassword"
-                        aria-describedby="passwordHelpBlock"
-                        placeholder="Re-enter Password"
-                        name="password"
-                        value={studentData.password} 
-                        onChange={handleInputChange} 
-                        required
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Please enter valid password
-                    </Form.Control.Feedback>
                 </Form.Group>
                 <Button className="primary-button add-student"  onClick={ handleSubmit } >Add Student</Button>
             </Form>

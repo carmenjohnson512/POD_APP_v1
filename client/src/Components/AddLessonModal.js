@@ -19,9 +19,10 @@ function AddLessonModal(props) {
   });
 
   //importing global state
-  const [isAuthenticatedUser, authObj, error] = useSelector((gState) => [
+  const [isAuthenticatedUser, authObj, courseId, error] = useSelector((gState) => [
     gState.isAuthenticatedUser,
     gState.authObj,
+    gState.courseId,
     gState.error
    
   ]);
@@ -36,7 +37,7 @@ function AddLessonModal(props) {
     currState[name] = value;
     //update current State backup
     setLessonData(currState);
-    console.log("This is what we entered in form", currState)
+    // console.log("This is what we entered in form", currState)
   }
 
   //handleSubmit function to send student data
@@ -48,7 +49,7 @@ function AddLessonModal(props) {
     if(form.checkValidity() !== false && isAuthenticatedUser){
       // console.log("Is this student data?", studentData)
       //dispatch addCourseAttempt action and pass courseData
-      dispatch(addLessonAttempt(lessonData, authObj.accessToken));
+      dispatch(addLessonAttempt(lessonData, courseId, authObj.accessToken));
       return <Alert variant="success">Lesson Added!</Alert>
     } 
     setValidated(true);

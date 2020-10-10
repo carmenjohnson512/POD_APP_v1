@@ -454,8 +454,9 @@ const addLessonSuccess = (lessonObj) => ({
 });
 
 //action: ADD_COURSE_REQUEST to REST API
-export const addLessonAttempt = (data, accessToken) => {
-    //function receives credentials
+export const addLessonAttempt = (data, courseId, accessToken) => {
+    data['course_id'] = courseId;
+        //function receives credentials
     return (dispatch) => {
       //dispatch action to notify client 
       //of add student request in progress

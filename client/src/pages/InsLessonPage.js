@@ -23,7 +23,7 @@ export default function InsLessonPage(props) {
 
     useEffect(() => {
         dispatch(getLessons(authObj.accessToken, courseId));
-    },[courseId , authObj.accessToken]);
+    },[courseId, authObj.accessToken]);
 
     const history = useHistory();
     //redirecting function

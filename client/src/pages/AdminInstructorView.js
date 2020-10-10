@@ -8,10 +8,10 @@ import { getAllInstructors, deleteInstructor, activateInstructor, deactivateInst
 import { useDispatch, useSelector } from 'react-redux'
 
 export default function AdminInstructorList() {
-    const history = useHistory()
+    const history = useHistory();
 
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
   
     const [allInstructors, authObj] = useSelector((gState) => [
       gState.allInstructors,
