@@ -16,7 +16,8 @@ function AddStudentModal(props) {
     last_name: "",
     email: "",
     role: "STUDENT",
-    crsid: "1"
+    crsid: "1",
+    // password: ""
   });
 
   //importing global state
@@ -109,6 +110,42 @@ function AddStudentModal(props) {
                       <option value="3">Test Course Three</option>
                     </Form.Control>
                 </Form.Group>
+<<<<<<< HEAD
+=======
+                {/* <Form.Group className="formBasicPassword">
+                    <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        id="inputPassword5"
+                        aria-describedby="passwordHelpBlock" 
+                        placeholder="Password"
+                        name="password"
+                        value={studentData.password} 
+                        onChange={handleInputChange} 
+                        required
+                    />
+                    <Form.Text className="passwordHelpBlock" muted>
+                        Password must be 8-20 characters long, contain letters and numbers, and
+                        must not contain spaces, special characters, or emoji.
+                    </Form.Text>
+                </Form.Group>
+                <Form.Group className="formBasicPassword">
+                    <Form.Label htmlFor="inputPassword5">Re-enter Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        id="inputPassword"
+                        aria-describedby="passwordHelpBlock"
+                        placeholder="Re-enter Password"
+                        name="password"
+                        value={studentData.password} 
+                        onChange={handleInputChange} 
+                        required
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please enter valid password
+                    </Form.Control.Feedback>
+                </Form.Group> */}
+>>>>>>> 82fb12761e055f133b432a1d7808e2e30a6ef1ef
                 <Button className="primary-button add-student"  onClick={ handleSubmit } >Add Student</Button>
             </Form>
         </Modal.Body>   
